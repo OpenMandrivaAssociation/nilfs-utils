@@ -20,6 +20,7 @@ Group:		System/Base
 Source0:	%{name}-%{version}.tar.bz2
 URL:		http://www.nilfs.org/en/index.html
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Buildrequires:  e2fsprogs-devel
 
 %description
 NILFS is a log-structured file system supporting versioning of the entire 
