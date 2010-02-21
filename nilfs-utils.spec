@@ -1,5 +1,5 @@
 %define name nilfs-utils
-%define version 2.0.14
+%define version 2.0.15
 %define release %mkrel 1
 # api is the part of the library name before the .so
 %define api 0
@@ -18,10 +18,9 @@ Release: 	%{release}
 License:	GPLv2+
 Group:		System/Base
 Source0:	%{name}-%{version}.tar.bz2
-Patch0:		remove_useless_chown.patch
 URL:		http://www.nilfs.org/en/index.html
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Buildrequires:  e2fsprogs-devel
+Buildrequires:  e2fsprogs-devel libuuid-devel
 
 %description
 NILFS is a log-structured file system supporting versioning of the entire 
@@ -49,7 +48,6 @@ applications which will use %{name}.
 
 %prep
 %setup
-%patch0 -p1
 
 %build
 %configure2_5x
