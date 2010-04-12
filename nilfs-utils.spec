@@ -1,5 +1,5 @@
 %define name nilfs-utils
-%define version 2.0.15
+%define version 2.0.18
 %define release %mkrel 1
 # api is the part of the library name before the .so
 %define api 0
@@ -47,7 +47,7 @@ This package contains the headers that programmers will need to develop
 applications which will use %{name}.
 
 %prep
-%setup
+%setup -q
 
 %build
 %configure2_5x
