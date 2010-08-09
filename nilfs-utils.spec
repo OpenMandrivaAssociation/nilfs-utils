@@ -1,5 +1,5 @@
 %define name nilfs-utils
-%define version 2.0.18
+%define version 2.0.19
 %define release %mkrel 1
 # api is the part of the library name before the .so
 %define api 0
