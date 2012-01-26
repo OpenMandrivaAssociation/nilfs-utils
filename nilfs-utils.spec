@@ -3,7 +3,7 @@
 # major is the part of the library name after the .so
 %define	major	0
 #define	libname %mklibname %{name} %{api} %{major}
-%define	libname	%mklibname %{name}
+%define	libname	%mklibname %{name} %{major}
 %define	devname %mklibname %{name} -d
 
 %define	_root_sbindir	/sbin
@@ -36,6 +36,8 @@ Summary:        Headers for developing programs that will use %{name}
 Group:          System/Base
 Requires:       %{libname} = %{EVRD}
 Provides:       %{name}-devel = %{EVRD}
+%define	oldlib	%mklibname %{name}
+%rename		%{oldlib}
 
 %description -n	%{devname}
 This package contains the headers that programmers will need to develop
@@ -59,7 +61,7 @@ applications which will use %{name}.
 %{_mandir}/man?/*
 
 %files -n %{libname}
-%{_libdir}/*.so.*
+%{_libdir}/libnilfs*.so.%{major}*
 
 %files -n %{devname}
 %{_libdir}/*.a
