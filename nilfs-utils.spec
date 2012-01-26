@@ -26,7 +26,7 @@ files mistakenly overwritten or destroyed just a few seconds ago.
 %package -n	%{libname}
 Summary:        Main library for %{name}
 Group:          System/Base
-Provides:       %{name} = %{version}-%{release}
+Provides:       %{name} = %{EVRD}
 
 %description -n	%{libname}
 This package contains the library needed to run programs dynamically
@@ -35,8 +35,8 @@ linked with %{name}.
 %package -n	%{devname}
 Summary:        Headers for developing programs that will use %{name}
 Group:          System/Base
-Requires:       %{libname} = %{version}
-Provides:       %{name}-devel = %{version}-%{release}
+Requires:       %{libname} = %{EVRD}
+Provides:       %{name}-devel = %{EVRD}
 
 %description -n	%{devname}
 This package contains the headers that programmers will need to develop
