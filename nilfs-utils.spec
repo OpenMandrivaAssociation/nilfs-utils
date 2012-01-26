@@ -1,5 +1,5 @@
 %define name nilfs-utils
-%define version 2.0.21
+%define version 2.1.1
 %define release %mkrel 1
 # api is the part of the library name before the .so
 %define api 0
@@ -66,7 +66,7 @@ rm -rf %{buildroot}
 %{_sysconfdir}/nilfs_cleanerd.conf
 %{_bindir}/*
 %{_root_sbindir}/*
-%{_mandir}/man?/*.lzma
+%{_mandir}/man?/*
 
 %files -n %{libname}
 %{_libdir}/*.so.*
