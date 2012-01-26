@@ -16,7 +16,7 @@ License:	GPLv2+
 Group:		System/Base
 Source0:	http://www.nilfs.org/download/%{name}-%{version}.tar.bz2
 URL:		http://www.nilfs.org/en/index.html
-Buildrequires:  e2fsprogs-devel libuuid-devel
+Buildrequires:  pkgconfig(uuid) pkgconfig(mount)
 
 %description
 NILFS is a log-structured file system supporting versioning of the entire 
