@@ -10,7 +10,7 @@
 
 Summary: 	Tools for nilfs filesystem
 Name: 		nilfs-utils
-Version: 	2.1.1
+Version: 	2.1.3
 Release: 	1
 License:	GPLv2+
 Group:		System/Base
@@ -47,7 +47,7 @@ applications which will use %{name}.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --disable-static
 %make
 
 %install
@@ -64,7 +64,5 @@ applications which will use %{name}.
 %{_libdir}/libnilfs*.so.%{major}*
 
 %files -n %{devname}
-%{_libdir}/*.a
-%{_libdir}/*.la
 %{_libdir}/*.so
 %{_includedir}/*.h
