@@ -141,7 +141,7 @@ popd
 
 %files
 %doc AUTHORS ChangeLog README
-%{_sysconfdir}/nilfs_cleanerd.conf
+%config(noreplace) %{_sysconfdir}/nilfs_cleanerd.conf
 %{_bindir}/*
 %{_root_sbindir}/*
 %{_mandir}/man?/*.xz
