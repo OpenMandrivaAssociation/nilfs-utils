@@ -29,6 +29,7 @@ files mistakenly overwritten or destroyed just a few seconds ago.
 %package -n	%{libnilfs}
 Summary:	The libnilfs library for %{name}
 Group:		System/Base
+License:	LGPLv2.1+
 %rename		%{libname}
 %rename		%{libname}0
 
@@ -39,6 +40,7 @@ linked with %{name}.
 %package -n	%{libnilfscleaner}
 Summary:	The libnilfscleaner library for %{name}
 Group:		System/Base
+License:	LGPLv2.1+
 %rename		%{libname}
 %rename		%{libname}0
 
@@ -49,6 +51,7 @@ dynamically linked with %{name}.
 %package -n	%{libnilfsgc}
 Summary:	The libnilfsgc library for %{name}
 Group:		System/Base
+License:	LGPLv2.1+
 %rename		%{libname}
 %rename		%{libname}0
 
@@ -77,7 +80,7 @@ applications which will use %{name}.
 %makeinstall_std LDCONFIG=/bin/true
 
 %files
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS ChangeLog README
 %{_sysconfdir}/nilfs_cleanerd.conf
 %{_bindir}/*
 %{_root_sbindir}/*
