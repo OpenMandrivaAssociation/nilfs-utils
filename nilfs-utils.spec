@@ -25,7 +25,6 @@ files mistakenly overwritten or destroyed just a few seconds ago.
 %package -n	%{libname}
 Summary:	Main library for %{name}
 Group:		System/Base
-Provides:	%{name} = %{version}-%{release}
 
 %description -n	%{libname}
 This package contains the library needed to run programs dynamically
