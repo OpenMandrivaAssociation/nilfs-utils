@@ -18,7 +18,7 @@ Release:	2
 License:	GPLv2+
 Group:		System/Base
 Source0:	http://www.nilfs.org/download/%{name}-%{version}.tar.bz2
-URL:		http://www.nilfs.org/en/index.html
+Url:		http://www.nilfs.org/en/index.html
 Buildrequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(mount)
@@ -104,7 +104,7 @@ linked with %{name}.
 %package -n	%{devname}
 Summary:	Headers for developing programs that will use %{name}
 Group:		System/Base
-Requires:	%{libname} = %{version}
+Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n	%{devname}
@@ -121,7 +121,7 @@ CONFIGURE_TOP="$PWD"
 mkdir -p uclibc
 pushd uclibc
 %uclibc_configure \
-		--disable-static
+	--disable-static
 %make
 popd
 %endif
@@ -182,3 +182,4 @@ popd
 %{uclibc_root}%{_libdir}/libnilfs*.so
 %endif
 %{_includedir}/*.h
+
