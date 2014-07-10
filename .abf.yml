@@ -1,2 +1,4 @@
+removed_sources:
+  nilfs-utils-2.1.4.tar.bz2: 29282c0e4b4b003e2ec4e7dd4b9db4d3c8b84924
 sources:
-  "nilfs-utils-2.1.4.tar.bz2": 29282c0e4b4b003e2ec4e7dd4b9db4d3c8b84924
+  nilfs-utils-2.2.0.tar.bz2: 98e7bb7ba059b27f9e0ddd3aeda789b269aefa07

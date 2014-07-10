@@ -13,8 +13,8 @@
 
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
-Version:	2.1.4
-Release:	7
+Version:	2.2.0
+Release:	1	
 License:	GPLv2+
 Group:		System/Base
 Source0:	http://www.nilfs.org/download/%{name}-%{version}.tar.bz2
@@ -113,9 +113,16 @@ applications which will use %{name}.
 
 %prep
 %setup -q
+%before_configure
 
 %build
 CONFIGURE_TOP="$PWD"
+
+mkdir -p glibc
+pushd glibc
+%configure --disable-static
+%make CC=%{__cc}
+popd
 
 %if %{with uclibc}
 mkdir -p uclibc
@@ -125,12 +132,6 @@ pushd uclibc
 %make
 popd
 %endif
-
-mkdir -p glibc
-pushd glibc
-%configure2_5x --disable-static
-%make
-popd
 
 %install
 %if %{with uclibc}
@@ -182,4 +183,3 @@ popd
 %{uclibc_root}%{_libdir}/libnilfs*.so
 %endif
 %{_includedir}/*.h
-
