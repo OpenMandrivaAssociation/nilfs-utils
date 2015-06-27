@@ -113,7 +113,7 @@ linked with %{name}.
 %package -n	uclibc-%{devname}
 Summary:	Headers for developing programs that will use %{name}
 Group:		System/Base
-Requires:	uclibc-%{libname} = %{version}-%{release}
+Requires:	uclibc-%{devname} = %{version}-%{release}
 Requires:	uclibc-%{libnilfs} = %{version}-%{release}
 Requires:	uclibc-%{libnilfsgc} = %{version}-%{release}
 Requires:	uclibc-%{libnilfscleaner} = %{version}-%{release}
@@ -127,7 +127,10 @@ applications which will use %{name}.
 %package -n	%{devname}
 Summary:	Headers for developing programs that will use %{name}
 Group:		System/Base
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{libnilfs} = %{version}-%{release}
+Requires:	%{libnilfsgc} = %{version}-%{release}
+Requires:	%{libnilfscleaner} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n	%{devname}
