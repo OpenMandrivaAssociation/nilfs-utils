@@ -14,7 +14,7 @@
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
 Version:	2.2.0
-Release:	1	
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Source0:	http://www.nilfs.org/download/%{name}-%{version}.tar.bz2
@@ -24,6 +24,9 @@ BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(mount)
 %if %{with uclibc}
 BuildRequires:	uClibc-devel
+BuildRequires:	uclibc-ext2fs-devel
+BuildRequires:	uclibc-libuuid-devel
+BuildRequires:	uclibc-libmount-devel
 %endif
 
 %description
@@ -31,7 +34,7 @@ NILFS is a log-structured file system supporting versioning of the entire
 file system and continuous snapshotting which allows users to even restore 
 files mistakenly overwritten or destroyed just a few seconds ago. 
 
-
+%if %{with uclibc}
 %package -n	uclibc-%{name}
 Summary:	Tools for nilfs filesystem (uClibc build)
 Group:		System/Base
@@ -40,6 +43,7 @@ Group:		System/Base
 NILFS is a log-structured file system supporting versioning of the entire 
 file system and continuous snapshotting which allows users to even restore 
 files mistakenly overwritten or destroyed just a few seconds ago. 
+%endif
 
 %package -n	%{libnilfs}
 Summary:	The libnilfs library for %{name}
@@ -52,6 +56,7 @@ License:	LGPLv2.1+
 This package contains the libnilfs library needed to run programs dynamically
 linked with %{name}.
 
+%if %{with uclibc}
 %package -n	uclibc-%{libnilfs}
 Summary:	The libnilfs library for %{name} (uClibc build)
 Group:		System/Base
@@ -60,6 +65,7 @@ License:	LGPLv2.1+
 %description -n	uclibc-%{libnilfs}
 This package contains the libnilfs library needed to run programs dynamically
 linked with %{name}.
+%endif
 
 %package -n	%{libnilfscleaner}
 Summary:	The libnilfscleaner library for %{name}
@@ -72,6 +78,7 @@ License:	LGPLv2.1+
 This package contains the libnilfscleaner library needed to run programs
 dynamically linked with %{name}.
 
+%if %{with uclibc}
 %package -n	uclibc-%{libnilfscleaner}
 Summary:	The libnilfscleaner library for %{name} (uClibc build)
 Group:		System/Base
@@ -80,6 +87,7 @@ License:	LGPLv2.1+
 %description -n	uclibc-%{libnilfscleaner}
 This package contains the libnilfscleaner library needed to run programs
 dynamically linked with %{name}.
+%endif
 
 %package -n	%{libnilfsgc}
 Summary:	The libnilfsgc library for %{name}
@@ -92,6 +100,7 @@ License:	LGPLv2.1+
 This package contains the libnilfsgc library needed to run programs dynamically
 linked with %{name}.
 
+%if %{with uclibc}
 %package -n	uclibc-%{libnilfsgc}
 Summary:	The libnilfsgc library for %{name} (uClibc build)
 Group:		System/Base
@@ -100,6 +109,20 @@ License:	LGPLv2.1+
 %description -n	uclibc-%{libnilfsgc}
 This package contains the libnilfsgc library needed to run programs dynamically
 linked with %{name}.
+
+%package -n	uclibc-%{devname}
+Summary:	Headers for developing programs that will use %{name}
+Group:		System/Base
+Requires:	uclibc-%{libname} = %{version}-%{release}
+Requires:	uclibc-%{libnilfs} = %{version}-%{release}
+Requires:	uclibc-%{libnilfsgc} = %{version}-%{release}
+Requires:	uclibc-%{libnilfscleaner} = %{version}-%{release}
+Provides:	uclibc-%{name}-devel = %{version}-%{release}
+
+%description -n	uclibc-%{devname}
+This package contains the headers that programmers will need to develop
+applications which will use %{name}.
+%endif
 
 %package -n	%{devname}
 Summary:	Headers for developing programs that will use %{name}
@@ -175,11 +198,11 @@ popd
 %if %{with uclibc}
 %files -n uclibc-%{libnilfsgc}
 %{uclibc_root}%{_libdir}/libnilfsgc.so.%{major}*
+
+%files -n uclibc-%{devname}
+%{uclibc_root}%{_libdir}/libnilfs*.so
 %endif
 
 %files -n %{devname}
 %{_libdir}/libnilfs*.so
-%if %{with uclibc}
-%{uclibc_root}%{_libdir}/libnilfs*.so
-%endif
 %{_includedir}/*.h
