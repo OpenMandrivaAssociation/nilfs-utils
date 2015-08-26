@@ -9,12 +9,12 @@
 
 %define	_root_sbindir	/sbin
 
-%bcond_without	uclibc
+%bcond_with	uclibc
 
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
 Version:	2.2.0
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		System/Base
 Source0:	http://www.nilfs.org/download/%{name}-%{version}.tar.bz2
