@@ -11,12 +11,12 @@
 
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
-Version:	2.2.0
-Release:	6
+Version:	2.2.8
+Release:	1
 License:	GPLv2+
 Group:		System/Base
-Source0:	http://www.nilfs.org/download/%{name}-%{version}.tar.bz2
-Url:		http://www.nilfs.org/en/index.html
+Source0:	https://github.com/nilfs-dev/nilfs-utils/releases/download/v%{version}/%{name}-%{version}.tar.bz2
+Url:		https://nilfs.sourceforge.io/en/
 Buildrequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(mount)
@@ -82,11 +82,11 @@ CONFIGURE_TOP="$PWD"
 mkdir -p glibc
 pushd glibc
 %configure --disable-static
-%make CC=%{__cc}
+%make_build CC=%{__cc}
 popd
 
 %install
-%makeinstall_std -C glibc LDCONFIG=/bin/true
+%make_install -C glibc LDCONFIG=/bin/true
 
 %files
 %doc AUTHORS ChangeLog README
@@ -94,6 +94,7 @@ popd
 %{_bindir}/*
 %{_root_sbindir}/*
 %{_mandir}/man?/*.xz
+%{_sbindir}/nilfs*
 
 %files -n %{libnilfs}
 %{_libdir}/libnilfs.so.%{major}*
