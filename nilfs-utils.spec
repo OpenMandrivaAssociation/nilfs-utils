@@ -93,7 +93,7 @@ popd
 %config(noreplace) %{_sysconfdir}/nilfs_cleanerd.conf
 %{_bindir}/*
 %{_root_sbindir}/*
-%{_mandir}/man?/*.xz
+%{_mandir}/man?/*.*
 %{_sbindir}/nilfs*
 
 %files -n %{libnilfs}
