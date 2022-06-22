@@ -12,7 +12,7 @@
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
 Version:	2.2.8
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 Source0:	https://github.com/nilfs-dev/nilfs-utils/releases/download/v%{version}/%{name}-%{version}.tar.bz2
