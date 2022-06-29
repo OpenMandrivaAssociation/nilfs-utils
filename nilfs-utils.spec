@@ -91,10 +91,10 @@ popd
 %files
 %doc AUTHORS ChangeLog README
 %config(noreplace) %{_sysconfdir}/nilfs_cleanerd.conf
-#{_bindir}/*
+%{_bindir}/*
 %{_root_sbindir}/*
 %{_mandir}/man?/*.*
-#{_sbindir}/nilfs*
+%{_sbindir}/nilfs*
 
 %files -n %{libnilfs}
 %{_libdir}/libnilfs.so.%{major}*
