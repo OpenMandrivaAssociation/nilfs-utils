@@ -11,13 +11,13 @@
 
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
-Version:	2.2.8
-Release:	2
+Version:	2.2.9
+Release:	1
 License:	GPLv2+
 Group:		System/Base
 Source0:	https://github.com/nilfs-dev/nilfs-utils/releases/download/v%{version}/%{name}-%{version}.tar.bz2
 Url:		https://nilfs.sourceforge.io/en/
-Buildrequires:	pkgconfig(ext2fs)
+BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(mount)
 
@@ -91,10 +91,10 @@ popd
 %files
 %doc AUTHORS ChangeLog README
 %config(noreplace) %{_sysconfdir}/nilfs_cleanerd.conf
-%{_bindir}/*
+#{_bindir}/*
 %{_root_sbindir}/*
 %{_mandir}/man?/*.*
-%{_sbindir}/nilfs*
+#{_sbindir}/nilfs*
 
 %files -n %{libnilfs}
 %{_libdir}/libnilfs.so.%{major}*
