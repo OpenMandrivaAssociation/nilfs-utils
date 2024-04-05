@@ -11,11 +11,12 @@
 
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
-Version:	2.2.10
+Version:	2.2.11
 Release:	1
 License:	GPLv2+
 Group:		System/Base
-Source0:	https://github.com/nilfs-dev/nilfs-utils/releases/download/v%{version}/%{name}-%{version}.tar.bz2
+Source0:  https://nilfs.sourceforge.io/download/nilfs-utils-%{version}.tar.bz2
+#Source0:	https://github.com/nilfs-dev/nilfs-utils/releases/download/v%{version}/%{name}-%{version}.tar.bz2
 Url:		https://nilfs.sourceforge.io/en/
 BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
