@@ -18,6 +18,11 @@ Group:		System/Base
 Source0:  https://nilfs.sourceforge.io/download/nilfs-utils-%{version}.tar.bz2
 #Source0:	https://github.com/nilfs-dev/nilfs-utils/releases/download/v%{version}/%{name}-%{version}.tar.bz2
 Url:		https://nilfs.sourceforge.io/en/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(ext2fs)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	pkgconfig(mount)
