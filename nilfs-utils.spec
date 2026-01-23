@@ -11,7 +11,7 @@
 
 Summary:	Tools for nilfs filesystem
 Name:		nilfs-utils
-Version:	2.2.14
+Version:	2.2.15
 Release:	1
 License:	GPLv2+
 Group:		System/Base
