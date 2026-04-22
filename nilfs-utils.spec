@@ -71,7 +71,6 @@ Group:		System/Base
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{libnilfs} = %{version}-%{release}
 Requires:	%{libnilfsgc} = %{version}-%{release}
-Requires:	%{libnilfscleaner} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n	%{devname}
