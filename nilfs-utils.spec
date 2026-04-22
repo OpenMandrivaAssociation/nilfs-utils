@@ -50,9 +50,9 @@ linked with %{name}.
 #rename		%{libname}
 #rename		%{libname}0
 
-%description -n	%{libnilfscleaner}
-This package contains the libnilfscleaner library needed to run programs
-dynamically linked with %{name}.
+#description -n	%{libnilfscleaner}
+#This package contains the libnilfscleaner library needed to run programs
+#dynamically linked with %{name}.
 
 %package -n	%{libnilfsgc}
 Summary:	The libnilfsgc library for %{name}
