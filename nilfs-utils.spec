@@ -106,7 +106,7 @@ popd
 %{_libdir}/libnilfs.so.%{major}*
 
 %files -n %{libnilfscleaner}
-%{_libdir}/libnilfscleaner.so.%{major}*
+#{_libdir}/libnilfscleaner.so.%{major}*
 
 %files -n %{libnilfsgc}
 %{_libdir}/libnilfsgc.so.%{major}*
