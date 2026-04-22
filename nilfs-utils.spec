@@ -43,12 +43,12 @@ License:	LGPLv2.1+
 This package contains the libnilfs library needed to run programs dynamically
 linked with %{name}.
 
-%package -n	%{libnilfscleaner}
-Summary:	The libnilfscleaner library for %{name}
-Group:		System/Base
-License:	LGPLv2.1+
-%rename		%{libname}
-%rename		%{libname}0
+#package -n	%{libnilfscleaner}
+#Summary:	The libnilfscleaner library for %{name}
+#Group:		System/Base
+#License:	LGPLv2.1+
+#rename		%{libname}
+#rename		%{libname}0
 
 %description -n	%{libnilfscleaner}
 This package contains the libnilfscleaner library needed to run programs
@@ -105,7 +105,7 @@ popd
 %files -n %{libnilfs}
 %{_libdir}/libnilfs.so.%{major}*
 
-%files -n %{libnilfscleaner}
+#files -n %{libnilfscleaner}
 #{_libdir}/libnilfscleaner.so.%{major}*
 
 %files -n %{libnilfsgc}
@@ -114,3 +114,5 @@ popd
 %files -n %{devname}
 %{_libdir}/libnilfs*.so
 %{_includedir}/*.h
+%{_libdir}/pkgconfig/nilfs.pc
+%{_libdir}/pkgconfig/nilfsgc.pc
